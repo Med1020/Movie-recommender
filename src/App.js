@@ -1,24 +1,38 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import {movieDictionary} from './data'
 
 function App() {
+  
+  const [selectedGenre, setSelectGenre] = useState("Thriller")
+  
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <header>Movie Recommender</header>
+      <div className='genre'>
+
+      {Object.keys(movieDictionary).map((genre, index)=>{
+        return(
+          <button className='btn' key={index} onClick={()=>setSelectGenre(genre)}>{genre}</button>
+          )
+        })}
+       
+      </div>
+      <div className='selectedgenre'>{selectedGenre}</div>
+      {
+        movieDictionary[selectedGenre].map((movie,i)=>{
+          return(
+            <div className='movie' key={i}>
+              <img src={movie.Img} alt='img'/><br/>
+              <div className='movie-name'>{movie.Name}</div><br/>
+              <div className='rating'>IMDb rating: {movie.IMDb}</div><br/>
+              <div className='desc'>{movie.Description}</div><br/>
+            </div>
+          )
+        })
+      }
+    </>
   );
 }
 

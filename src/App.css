@@ -1,38 +1,89 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500&display=swap');
+:root{
+  box-sizing: border-box;
+  --blue:#0f0c24;
+  --pink:#c1436d;
+  --purple:#a350a3;
+  --white:#e8eae3;
+
+}
+
+body{
+  background-color: var(--white);
+  font-family: 'Montserrat', sans-serif;
+}
+
+header{
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: var(--blue);
+  background-color: var(--pink);
+}
+
+.genre{
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+
+}
+
+img{
+  width: 250px;
+  height: 375px;
+}
+
+.btn{
+  padding: 10px;
+  margin: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--purple);
+  color: var(--white);
+  border: 2px solid var(--blue);
+  border-radius: 2px;
+}
+
+.btn:hover{
+  background-color: var(--white);
+  border: 1px solid var(--purple);
+  color: var(--pink);
+}
+
+.btn:active{
+  background-color: var(--pink);
+  color: var(--white);
+}
+
+.selectedgenre{
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: 1px solid var(--blue);
+  width: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin:auto;
+}
+
+
+
+.movie{
+  display: inline-block;
+  padding: 30px;
+  width: 250px;
+  vertical-align: top;
+  margin: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.movie-name{
+  font-size: 24px;
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.rating{
+  font-weight: bold;
 }
