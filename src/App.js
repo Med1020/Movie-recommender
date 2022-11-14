@@ -9,7 +9,7 @@ function App() {
   
   return (
     <>
-      <header>Movie Recommender</header>
+      <header>📽️ Movie Recommender </header>
       <div className='genre'>
 
       {Object.keys(movieDictionary).map((genre, index)=>{
